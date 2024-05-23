@@ -20,10 +20,10 @@
 <section>
     <article>
         <?php 
-      /*  // Ruta del directorio actual donde se encuentra el archivo index.php
-$directorio =__DIR__
+        // Ruta del directorio actual donde se encuentra el archivo index.php
+$directorio =__DIR__;
 var_dump($directorio);
-*/
+
 // Escanea el directorio en busca de carpetas
 $carpetas = array_diff(scandir($directorio), array('..', '.'));
 var_dump($carpetas);

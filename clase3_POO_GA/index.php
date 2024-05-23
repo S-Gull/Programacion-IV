@@ -10,7 +10,7 @@
     <?php
     $fecha = "22 Mayo 2024";
     $n_tema = 3;
-    $tema = "Sqlite ||";
+    $tema = " || Sqlite";
     include './src/includes/header.php';
     ?>
     <!--  -->
@@ -18,12 +18,9 @@
     <main>
         <section>
             <article>
-            <h1> ¿Qué es la programación orientada a objetos?</h1>
+            <h1> ¿Qué es SQLite?</h1>
                 <p>
-                    La programación orientada a objetos (POO) es un paradigma de programación que se basa en el uso de
-                    objetos y clases para modelar conceptos y problemas del mundo real. En la POO, un objeto es una
-                    entidad que contiene datos y métodos que actúan sobre dichos datos. Una clase es un molde o una
-                    plantilla que define las propiedades y comportamientos de un objeto.
+                SQLite es una herramienta de software libre que permite almacenar información en dispositivos embebidos de forma sencilla, eficaz, potente y rápida. Es una base de datos muy eficaz para desarrollos en ambientes embebidos, ofreciendo alto rendimiento, eficacia, seguridad, estandarización e interoperabilidad. SQLite implementa el estándar SQL92 y agrega extensiones que facilitan su uso en cualquier ambiente de desarrollo, soportando consultas básicas y complejas del lenguaje SQL. Se destaca por ser autocontenida, funcionar en memoria, tener un tamaño pequeño y ser altamente portátil entre dispositivos y plataformas. SQLite es ampliamente utilizado en dispositivos móviles y sistemas embebidos, siendo una base de datos de facto en estos entornos.
                 </p>
             </article>
         </section>
@@ -31,108 +28,8 @@
             
             <article>
   
-                <!-- // imprimir el objeto -->
-                <h1> Pilares de la Programación Orientada a Objetos</h1>
-                <p>
-                    La programación orientada a objetos como paradigma, se basa en cuatro pilares fundamentales:
-                    abstracción, encapsulamiento, polimorfismo y herencia. Estos términos so la base de la POO y al
-                    comienzo, puede ser un poco confuso entenderlo.
-                </p>
-                <ol>
-                    <li><b>
-                        Abstracción</b>
-                    </li>
-                    <p>
-                        De este término ya unos párrafos más arriba. ¿Te acuerdas? cuando queríamos crear un usuario. El
-                        proceso
-                        de abstracción es pensar que atributos y qué métodos iba a tener.
-                    </p>
-                    <p>
-                        Cuando creamos un sistema, tenemos que hacer una abstracción para todas las clases. Por ejemplo,
-                        en
-                        EDteam, serían los cursos, las clases, las suscripciones, las publicaciones en la comunidad.
-                        Cada
-                        uno de
-                        estos elementos sería una clase, y tenemos que hacer ese proceso mental: qué atributos y qué
-                        métodos
-                        van
-                        a tener cada uno. Esos conceptos hay que llevarlos y convertirlos en clases. </p>
-                    </p>
-
-                    <li><b>Encapsulamiento</b></li>
-                    <p>
-                    Como ya hemos visto, los objetos se comunican entre ellos. Esto podría traer problemas de seguridad
-                    si
-                    un objeto puede modificar los datos de cualquier otro. Por eso, se necesita proteger la información
-                    de
-                    manipulaciones no autorizadas. De esta manera, cuando se comunican los objetos, hay caminos que se
-                    pueden seguir y hay caminos que no, datos protegidos, datos privados o públicos, métodos para
-                    acceder a
-                    cierta información, entre otros. Así se mantiene organizado el sistema.
-
-                    Imagínate que cualquier objeto pueda acceder a cualquier información sin autorización, puede
-                    ocasionar
-                    cambios indebidos, que puede hacer que todo el sistema colapse y se caiga.
-                    </p>
-                    <li><b> Polimorfismo</b></li>
-                    <p>
-                    Volvamos a recordar el esquema del tío Alexys convirtiéndose en premium.
-
-                    Cuando pasas a premium, se notifica vía tres canales en EDteam: slack, web y correo. La primera es
-                    privada para nuestro equipo, mientras que las últimas dos, es visible para el usuario, confirmándole
-                    que
-                    ya es premium.
-
-                    Si te das cuenta, es la misma funcionalidad (notificación), aunque internamente cada uno de esos
-                    métodos
-                    funciona diferente. Es decir, la notificación de Slack tiene su propia API, métodos y lógica, igual
-                    para
-                    la web y el correo. Pero en esencia, es la misma acción. Eso nos simplifica mucho el trabajo porque
-                    podemos dar ordenes coherentes a varios objetos sin preocuparnos cómo se ejecutarán.
-
-                    Por ejemplo, si le decimos al tía Alexys y a mí que bailemos, cada uno lo hará de forma diferente,
-                    cada
-                    uno a su modo. Sin embargo, nos dieron una orden y lo cumplimos, aunque a nuestra manera particular.
-                    Eso
-                    es el polimorfismo, poder darle la misma orden a diferentes objetos y que cada uno de ellos
-                    respondan a
-                    su propia manera.
-                    </p>
-                    <li><b>Herencia</b></li>
-                    <p>
-                    Este pilar de la POO es, quizás, el más fácil de entender porque tiene relación con el mundo real.
-                    Por
-                    ejemplo, mis hijos han heredado muchas cosas de mí, tanto atributos como funcionalidades. En
-                    atributos,
-                    podemos decir que el color de ojos, el cabello o el color de piel. En la funcionalidad, el carácter
-                    o
-                    personalidad. Sin embargo, ninguno es una copia exacta de mí. Sobre esas cosas que han heredado,
-                    tienen
-                    sus propios atributos y funcionalidad.
-
-                    Es lo mismo que en la programación orientad a objetos. Tenemos una clase padre, y las clases hijas
-                    heredan funcionalidades y atributos, pero no son idénticas. Solamente aprovechan eso que ya existen
-                    y
-                    luego se le añaden nuevas cosas.
-
-                    Por ejemplo, si tenemos una clase para crear usuarios genéricos, pero luego necesitamos un usuario
-                    diferente, de staff, solamente para el equipo de EDteam y que tenga diferentes funcionalidades y
-                    atributos que un usuario normal ¿Qué podemos hacer? crear una nueva clase que herede de la clase
-                    padre,
-                    y esa sería el staff.
-
-                    Si luego necesitamos otro usuario que sea profesor, entonces heredamos de la clase usuario y creamos
-                    la
-                    clase profesor, y de allí, creamos todos los usuarios de profesores del equipo. Ahora bien, si
-                    queremos
-                    meter invitados a la página, personas que sin pagar una suscripción puedan tener acceso a los
-                    sorteos o
-                    campañas, podemos crear un rol de invitados. Y así funciona la herencia en la POO.
-                    </p>
-                </ol>
-
-                https://ed.team/blog/que-es-la-programacion-orientada-a-objetos-poo
-            
+            <h2>Características de SQLite</h2> <ul> <li>Autocontenida: SQLite no requiere un servidor separado, lo que la hace ideal para aplicaciones embebidas y de escritorio.</li> <li>Serverless: SQLite no necesita un proceso de servidor separado, lo que la hace más simple y fácil de configurar.</li> <li>Transaccional: SQLite soporta transacciones ACID completas, lo que garantiza la integridad de los datos.</li> <li>Dinámicamente tipada: SQLite usa tipos de datos dinámicos, lo que significa que puede almacenar cualquier tipo de dato en cualquier columna.</li> <li>Multiplataforma: SQLite funciona en la mayoría de los sistemas operativos, incluyendo Windows, macOS, iOS, Android, Linux, etc.</li> <li>Código abierto: SQLite tiene un código abierto y está disponible para su uso gratuito para cualquier propósito, incluyendo aplicaciones comerciales.</li> <li>Pequeño tamaño: El motor de base de datos SQLite en sí mismo es muy pequeño, compacto y eficiente, con un tamaño de solo unos pocos cientos de kilobytes.</li> <li>Rápido: SQLite es muy rápido para la mayoría de las operaciones de base de datos, especialmente para aplicaciones de lectura intensiva.</li> <li>Seguro: SQLite tiene un buen historial de seguridad y no es conocido por tener vulnerabilidades de seguridad.</li> <li>Estable: SQLite es un proyecto maduro y estable que ha estado en desarrollo activo durante más de 15 años.</li> </ul>
+               
             </article>
         </section>
         

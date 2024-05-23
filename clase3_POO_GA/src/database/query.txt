@@ -1,0 +1,36 @@
+/*Como crear tblas 
+$CREATE TABLE "Nombre de la tabla"
+(aca se van a a agregar los datos
+	"Entero"	INTEGER NOT NULL,
+	"string"	TEXT NOT NULL UNIQUE,
+	"blob"	BLOB NOT NULL,
+	"real"	REAL NOT NULL,
+	"numerico"	NUMERIC NOT NULL UNIQUE,
+	PRIMARY KEY("Entero" AUTOINCREMENT)
+)
+*/
+CREATE TABLE "tbl_articulos" (
+	"id_art"	INTEGER NOT NULL,
+	"descripcion_art"	TEXT,
+	"marca_med"	TEXT,
+	"id_med"	INTEGER,
+	"id_cat"	INTEGER,
+	PRIMARY KEY("id_art" AUTOINCREMENT)
+);
+
+
+/* como insertar datos 
+$INSERT INTO "tabla a la que se le va a insertar" (COLUMN1, COLUMN2, ...)
+VALUES(VALUE1, VALUE2,...)*/
+INSERT INTO tbl_medidas(descripcion_med)VALUES('litros')
+SELECT * from tbl_medidas
+
+INSERT INTO tbl_categorias(descripcion_cat)VALUES('eventos')
+select * from tbl_categorias
+SET COLUMN1 = "Valor nuevo 1"
+SET COLUMN2 = "Valor nuevo 2"
+	where (condiciones)
+
+*/
+select * from tbl_categorias 
+UPDATE tbl_categorias set descripcion_cat=
