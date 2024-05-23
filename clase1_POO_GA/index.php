@@ -9,7 +9,7 @@
 <body>
     <?php
     $fecha = "8 Mayo 2024";
-    $n_tema = 1;
+    $n_tema = 01;
     $tema = " POO - PHP ";
     include './src/includes/header.php';
     ?>

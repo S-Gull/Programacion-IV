@@ -33,8 +33,7 @@ foreach ($carpetas as $carpeta) {
     echo '<a href="'  . './' . $carpeta .'">' . $carpeta . '</a><br>';
 }
         ?>
-<a href="./clase1_POO_GA/">Clase 1</a>
-<a href="./clase2_POO_GA/">Clase 2</a>
+
     </article>
 </section>
 </main>

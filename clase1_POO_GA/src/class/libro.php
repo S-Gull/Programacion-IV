@@ -58,3 +58,4 @@ class Libro_Protegido
     $libro2->Imprimir_Hoja();
 
 ?>
+
