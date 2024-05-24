@@ -32,5 +32,120 @@ SET COLUMN2 = "Valor nuevo 2"
 	where (condiciones)
 
 */
+
+ 
+
 select * from tbl_categorias 
-UPDATE tbl_categorias set descripcion_cat=
+UPDATE tbl_categorias set descripcion_cat= 'otros' WHERE id_cat = 4
+
+UPDATE tbl_categorias set descripcion_cat= descripcion_cat || ' *'--
+/* DELETE FROM TABLE
+WHERE condicion*/
+delete from tbl_categorias where id_cat = 3
+
+SELECT * from tbl_categorias
+
+/* OPERADORES ARITMÉTICOS
++ = SUMA
+- = RESTA
+* = MUTIPLICAR
+/ = DIVIDIR
+% = DIVDIR Y OBTENER UN RESIDUO */
+
+/* operadores de comparacion
+> mayor que 
+< menor que 
+>= mayor o igual que
+<= menor o igual que
+= igual que
+<> , != no igual que
+*/ 
+/* operadores logicos
+and  -y 
+or -o
+not -no
+*/
+
+/* Funciones string */
+
+select rtrim('hola mundo SQLite     ')  || ltrim('                 -Alumno Guillermo-') || trim('      curso de sqlite      ')
+
+//vistas
+CREATE view vista1
+as 
+SELECT descripcion_cat as catergoria, id_cat as id
+FROM tbl_categorias
+select * FROM vista1
+// where
+SELECT * from tbl_articulos
+WHERE marca_med = 'HP'
+// in
+SELECT * from tbl_articulos
+WHERE marca_med in ('HP','LG')
+//like
+SELECT * from tbl_articulos
+WHERE marca_med like '%R%'
+// and
+SELECT * from tbl_articulos
+where id_art = 1 AND id_cat = 1
+// or
+SELECT * from tbl_articulos
+where id_art = 1 or id_cat = 1
+// order by
+SELECT * from tbl_articulos
+ORDER by id_art DESC
+
+// inner join
+
+SELECT * FROM tbl_articulos as art
+join tbl_medidas med
+on med.id_med = art.id_med
+JOIN tbl_categorias cat
+on cat.id_cat = art.id_cat
+
+// left y right join
+SELECT * from tbl_articulos a
+left join tbl_categorias b on a.id_cat = b.id_cat
+
+// Union
+
+
+SELECT * FROM tbl_categorias
+UNION
+SELECT * FROM tbl_medidas
+
+// group by
+
+SELECT marca_med, count(descripcion_art) from tbl_articulos
+GROUP by marca_med  
+
+// iif
+SELECT iif (3=33, 'numeros iguales','numeros diferentes')
+
+// case
+case
+	when expresion
+	  then expresion verdadera
+	else
+	 falsa
+end
+
+// triggers
+//before delete
+CREATE TRIGGER validar_articulo
+BEFORE INSERT ON "tbl_articulos"
+BEGIN
+    -- Ejemplo de validación: No permitir la inserción si la descripción del artículo es nula
+    IF NEW.descripcion_art IS NULL THEN
+        SELECT RAISE(ABORT, 'La descripción del artículo no puede ser nula');
+    END IF;
+END;
+// after delete
+
+CREATE TRIGGER auditar_eliminacion_articulo
+AFTER DELETE ON "tbl_articulos"
+BEGIN
+    -- Ejemplo de auditoría: Registrar la eliminación del artículo en una tabla de auditoría
+    INSERT INTO tabla_auditoria (accion, fecha, descripcion)
+    VALUES ('Eliminación de Artículo', DATETIME('now'), 'Se eliminó el artículo con ID ' || OLD.id_art);
+END;
