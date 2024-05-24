@@ -34,17 +34,42 @@ SET COLUMN2 = "Valor nuevo 2"
 */
 
  
-
+/* como actualizar tablas
 select * from tbl_categorias 
 UPDATE tbl_categorias set descripcion_cat= 'otros' WHERE id_cat = 4
 
 UPDATE tbl_categorias set descripcion_cat= descripcion_cat || ' *'--
-/* DELETE FROM TABLE
+/* como borrar tablas 
+DELETE FROM TABLE
 WHERE condicion*/
 delete from tbl_categorias where id_cat = 3
 
 SELECT * from tbl_categorias
 
+/* OPERADORES ARITMÉTICOS
++ = SUMA
+- = RESTA
+* = MUTIPLICAR
+/ = DIVIDIR
+% = DIVDIR Y OBTENER UN RESIDUO */
+
+/* operadores de comparacion
+> mayor que 
+< menor que 
+>= mayor o igual que
+<= menor o igual que
+= igual que
+<> , != no igual que
+*/ 
+/* operadores logicos
+and  -y 
+or -o
+not -no
+*/
+
+/* Funciones string */
+
+select rtrim('hola mundo SQLite     ')  || ltrim('                 -Alumno Guillermo-') || trim('      curso de sqlite      ')
 
 //vistas
 CREATE view vista1
