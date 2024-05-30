@@ -1,3 +1,25 @@
+<?php
+if (isset($_GET['submit'])){
+
+if($_SERVER['REQUEST_METHOD'] =='GET'){
+
+    include ("./src/class/libro.php");
+    $titulo_GA = $_GET['titulo'];
+    $autor_GA = $_GET['autor'];
+    $editorial_GA = $_GET['editorial'];
+    $edicion_GA = $_GET['edicion'];
+    $anio_GA = $_GET['anio_publicacion'];
+    $hojas_GA = $_GET['numero_hojas'];
+    $libroSubmit_GA = new Libro( $titulo_GA,$autor_GA,$editorial_GA,$edicion_GA,$anio_GA,$hojas_GA);
+}
+    }
+
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,6 +78,23 @@
                         </div>
                         <input type="submit" name='submit' value="Enviar">
                     </form>
+                   <?php if (isset($_GET['submit'])){
+
+
+
+    echo (' <h1> Detalles del libro Usando interface</h1>
+                <ol>
+                   <li> Titulo: '.$libroSubmit_GA ->Get_Titulo().'  </li>
+                   <li> Autor: '.$libroSubmit_GA ->Get_Autor().'  </li>
+                   <li> Editorial: '.$libroSubmit_GA ->Get_Editorial().' </li>
+                   <li> Edición:    '.$libroSubmit_GA ->Get_Edicion().'</li>
+                   <li> Año Publicación:  '.$libroSubmit_GA ->Get_Anio_Public().'</li>
+                   <li> Numero Hojas: '.$libroSubmit_GA ->Get_N_Hojas().' </li>
+               </ol>');
+}
+
+
+?>
                 </div>
             </article>
         </section>
