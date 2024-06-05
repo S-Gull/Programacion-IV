@@ -3,7 +3,5 @@
 
     if (isset($_GET['submit'])) {
     if ($_SERVER['REQUEST_METHOD'] == 'GET'){
-edad
-Nombre
     }};
 ?>
